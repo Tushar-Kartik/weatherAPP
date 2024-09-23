@@ -1,0 +1,30 @@
+.forecast-item{
+    width: 75%;
+    height: 80%;
+    border: 2px solid blue;
+    border-radius: 25px;
+    display: grid;
+    grid-template-rows:15% repeat(2,1fr) ;
+    justify-items: center;
+    align-items: center;
+}
+.dayname{
+    font-size: 1.2rem;
+    font-weight: 450;
+}
+.temp{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.small{
+    font-size: smaller;
+}
+.large{
+    font-size: x-large;
+    font-weight: 500;
+}
+.darkgrey{
+    color: rgb(117, 117, 118);
+}
