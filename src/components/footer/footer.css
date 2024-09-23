@@ -1,0 +1,27 @@
+.togglebutton{
+    
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.4);
+    color: rgb(71, 70, 70);
+    border-radius: 20px;
+    border: 0px solid white;
+}
+.togglebutton:hover{
+    background-color: #ffffff;
+    color: rgb(52, 52, 52);
+    box-shadow: 0px 0px 10px #62b4dc;
+
+}
+@media screen and (max-width: 600px) {
+
+    .togglebutton{
+        
+        padding: 8px;
+        background-color: rgba(255, 255, 255, 0.4);
+        color: rgb(42, 42, 42);
+        border-radius: 20px;
+        border: 0px solid white;
+        margin-bottom: 0px;
+        font-size: smaller;
+    }
+}

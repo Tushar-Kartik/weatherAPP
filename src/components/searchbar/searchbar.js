@@ -15,20 +15,20 @@ const Searchbar = ({setcurrcity}) => {
 
   return (
     <div className='search'>
-      <form  onSubmit={handlesubmit}>
-        <input 
-          name='searchcity'
-          className='searchbox' 
-          type="text" 
-          placeholder='Search City. . . '
-          onChange={handlecitychange}
-        />
+          <form  onSubmit={handlesubmit}>
+            <input 
+              name='searchcity'
+              className='searchbox' 
+              type="text" 
+              placeholder='Search City. . . '
+              onChange={handlecitychange}
+            />
 
-        <button type='submit' className='search-button' >
-          Search
-        </button>
+            <button type='submit' className='search-button' >
+              Search
+            </button>
 
-        </form>
+            </form>
 
     </div>
   )

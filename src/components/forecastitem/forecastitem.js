@@ -109,6 +109,9 @@ const Forecastitem = ({ lat, lon, currcity, day, tempunit }) => {
   const [display_high, setdisplayhigh] = useState("");
   const [display_low, setdisplaylow] = useState("");
 
+  // experimenting with the forecast item background
+  const [bg,setbg]=useState("");
+
   const forecastweather = async (lat, lon, dayfor) => {
     try {
       const url = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_WEATHER_API}&units=metric`;
@@ -119,12 +122,16 @@ const Forecastitem = ({ lat, lon, currcity, day, tempunit }) => {
       const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
       const dayofweek = daysOfWeek[date.getDay()];
       setday_1(dayofweek);
+      
       setday_1temp(forecastdata.list[dayfor].main.temp);
       setday_1high(forecastdata.list[dayfor].main.temp_max);
       setday_1low(forecastdata.list[dayfor].main.temp_min);
       setday_1icon(forecastdata.list[dayfor].weather[0].icon);
 
-      console.log("day1 high:",forecastdata.list[dayfor].main.temp_max);
+      // // experimenting with the forecast item background
+      // console.log("forecast data",forecastdata);
+      // console.log("condition:",forecastdata.list[dayfor].weather[0].main);
+      setbg(forecastdata.list[dayfor].weather[0].main);
 
     } catch (error) {
       console.log("error in fetching forecast data", error);
@@ -146,6 +153,17 @@ const Forecastitem = ({ lat, lon, currcity, day, tempunit }) => {
     }, [tempunit, day_1temp, day_1high, day_1low]);
 
 
+    // useEffect(() => {
+    //   const tab = document.getElementsByClassName('forecast-item');
+    //   if (bg === 'clouds') 
+    //   {
+    //     tab.style.backgroundColor = 'rgba(135, 206, 235, 0.5)';
+    //   } else if (bg === 'rain') {
+    //     tab.style.backgroundImage = 'rgba(0, 0, 139, 0.5)';
+    //   }
+
+    // }, [bg]);
+
 
   return (
     <div className='forecast-item'>
@@ -154,10 +172,12 @@ const Forecastitem = ({ lat, lon, currcity, day, tempunit }) => {
       </div>
       <div className="temp">
         <span className='large'>{displaytemp} °{displayicon}</span>
-        <span className='small darkgrey'>
+        <span className='small darkgrey center'>
           High:{display_high}°{displayicon}
           <br />
           Low: {display_low}°{displayicon}
+          <br />
+          weather: {bg}
         </span>
       </div>
       <div className="forecasticon">

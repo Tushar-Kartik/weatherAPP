@@ -10,9 +10,16 @@ const Forecast = ({lat,lon,currcity,tempunit}) => {
   console.log("lon value at first",lon);
   console.log("currcity value at first:",currcity);
 
-  
+
   return (
     <div className='forecast-container'>
+
+        <div className="upper">
+           Upcomming Days in {currcity}..
+           
+        </div>
+       
+        <div className="lower">
         <Forecastitem
         tempunit={tempunit}
         lat={lat}
@@ -41,6 +48,7 @@ const Forecast = ({lat,lon,currcity,tempunit}) => {
         currcity={currcity}
         day={33}>
         </Forecastitem>
+        </div>
         
         
     </div>
